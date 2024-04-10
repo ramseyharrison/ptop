@@ -35,3 +35,4 @@
 *.app
 
 .vscode/cmake_install.cmake
+*.bkp

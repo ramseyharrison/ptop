@@ -11,6 +11,8 @@ endif(WIN32)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DDATA_COUT=1")
+
 add_executable(ptop ${PROJECT_SOURCE_DIR}/src/clientmain.cpp ${srcs})
 add_executable(ptop_rendezvous ${PROJECT_SOURCE_DIR}/src/servermain.cpp ${srcs})
 

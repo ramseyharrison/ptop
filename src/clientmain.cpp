@@ -45,11 +45,13 @@ int main(int argc, char** argv) {
         windows_internet wsa_wrapper(MAKEWORD(2, 2));
 #endif
 
-        std::cout << "Please enter the rendezvous server's IP:" << std::endl;
-        std::string raw_ip{};
-
-        std::cin >> raw_ip;
-
+	std::string raw_ip{};
+	if(argc == 2){
+	  raw_ip = argv[1];
+	}else{
+	  std::cout << "Please enter the rendezvous server's IP:" << std::endl;
+	  std::cin >> raw_ip;
+	}
         if (raw_ip == "") {
             std::this_thread::sleep_for(100ms); //epic optimization
             return 0;
